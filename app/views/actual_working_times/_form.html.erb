@@ -1,0 +1,19 @@
+<%= form_tag({:action => 'create'}, {:id => 'actual_working_times', :name => 'actual_working_times'}) do |f| %>
+
+  <%= label_tag 'user_id' %>:
+  <%= session[:user].name %><br />
+  
+  <%= label_tag 'project_id' %>:
+  <%= select :actual_working_times, :project_id, @projects.map{|project| [project.project_name, project.id]} %><br />
+  
+  <%= label_tag 'actual_working_date' %>:
+  <%= date_select :actual_working_times, :actual_working_date %><br />
+  
+  <%= label_tag 'actual_manhour' %>:
+  <%= number_field_tag 'actual_working_times[actual_manhour]' %><br />
+
+  <%= label_tag '備考' %>:
+  <%= text_field_tag 'actual_working_times[actual_working_time_other]' %><br />
+  
+  <%= submit_tag "report submit" %>
+<% end %>

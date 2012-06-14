@@ -1,0 +1,15 @@
+<table>
+<% @actual_working_times.each do |actual_working_time| %>
+  <tr>
+    <td><%= actual_working_time.actual_working_date %></td>
+    <td><%= actual_working_time.user_id %></td>
+    <td><%= actual_working_time.user.name %></td>	
+    <td><%= actual_working_time.project_id %></td>
+	<td><%= actual_working_time.project.project_name %></td>
+    <td><%= actual_working_time.actual_manhour %></td>
+	<td><%= link_to 'delete', :action => 'destroy', :id => actual_working_time.id %></td>
+  </tr>
+<% end %>
+
+</table>
+<%= link_to 'report', :action => 'new' %>
